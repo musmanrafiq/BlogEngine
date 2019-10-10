@@ -4,44 +4,31 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Blog</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" />
+    <link href="~/css/site.css" rel="stylesheet" />
+
 </head>
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-                <strong>UBlog</strong>
-            </a>
-          
-        </div>
-
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item">
-                    Home
-                </a>
-
-            
-
     
+    <nav class="navbar is-trasparent">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    <image src="images/logo.png" width="100" height="25" />
+                </a>
             </div>
-
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <div class="buttons">
-                        <a class="button is-primary">
-                            <strong>Sign up</strong>
-                        </a>
-                        <a class="button is-light">
-                            Log in
-                        </a>
-                    </div>
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item">Pages</a>
+                    <a class="navbar-item">Privacy</a>
                 </div>
             </div>
         </div>
     </nav>
-    @RenderBody()
-
+    <section class="section">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </section>
 </body>
-
 </html>
