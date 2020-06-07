@@ -1,13 +1,7 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Collections;
-using System.Collections.Generic;
-using UBlog.Data.DummyData;
-using UBlog.Data.Entities;
-using UBlog.Data.Interfaces;
-using UBlog.Data.Repositories;
 
 namespace UBlog
 {
@@ -15,10 +9,10 @@ namespace UBlog
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddMvc();
 
-            var dummyPosts = DummyDataProvider.GetBlogPosts();
-            services.AddScoped<IBlogPostRepository>(p => new BlogPostRepository(dummyPosts));
+            //var dummyPosts = DummyDataProvider.GetBlogPosts();
+            //services.AddScoped<IBlogPostRepository>(p => new BlogPostRepository(dummyPosts));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -29,12 +23,20 @@ namespace UBlog
             }
 
             app.UseRouting();
+            app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
             });
         }
     }
