@@ -7,16 +7,15 @@ namespace BlogEngine.Website.Controllers
     {
         private readonly IPostService _postService;
 
-        public HomeController(IPostService postService)
+        public HomeController()
         {
-            _postService = postService;
         }
 
         // GET: /<controller>/
         public IActionResult Index()
         {
-            var postModels = _postService.GetAll();
-            return View(postModels);
+            //var postModels = _postService.GetAll();
+            return View();
         }
     }
 }
