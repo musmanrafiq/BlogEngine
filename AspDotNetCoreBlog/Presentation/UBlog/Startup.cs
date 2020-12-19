@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using BlogEngine.Infrastructure.DependencyInjection;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -7,9 +9,17 @@ namespace UBlog
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; set; }
+
+        public Startup(IConfiguration Configuration)
+        {
+            this.Configuration = Configuration;
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.RegisterServices(Configuration);
 
             //var dummyPosts = DummyDataProvider.GetBlogPosts();
             //services.AddScoped<IBlogPostRepository>(p => new BlogPostRepository(dummyPosts));
@@ -21,6 +31,7 @@ namespace UBlog
             {
                 app.UseDeveloperExceptionPage();
             }
+
 
             app.UseRouting();
             app.UseDefaultFiles();

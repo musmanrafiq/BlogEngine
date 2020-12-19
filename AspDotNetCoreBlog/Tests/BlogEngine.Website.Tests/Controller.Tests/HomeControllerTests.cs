@@ -47,7 +47,7 @@ namespace BlogEngine.Website.Tests.Controller.Tests
         {
             var mockPostService = new Mock<IPostService>();
             mockPostService.Setup(s => s.GetAll()).Returns(GetList());
-            controller = new HomeController(mockPostService.Object);
+            //controller = new HomeController(mockPostService.Object);
         }
 
         // test posts list
