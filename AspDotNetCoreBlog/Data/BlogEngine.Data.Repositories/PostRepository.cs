@@ -1,11 +1,11 @@
 ﻿using BlogEngine.Data.Interfaces;
 using BlogEngine.Data.Model.Entities;
 
-namespace BlogEntine.Data.Repositories
+namespace BlogEngine.Data.Repositories
 {
     public class PostRepository : GenericRepository<Post, int>, IPostRepository
     {
-        public PostRepository(IBlogEngineDbContext dbContext) : base(dbContext)
+        public PostRepository(IBlogEngineRepositoryContext dbContext) : base(dbContext)
         {
         }
     }

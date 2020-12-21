@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{386AEA7B-1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogEngine.Data.Model", "Data\BlogEngine.Data.Model\BlogEngine.Data.Model.csproj", "{74764570-932D-4C08-AF83-C0E8F7E6F19D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogEntine.Data.Repositories", "Data\BlogEntine.Data.Repositories\BlogEntine.Data.Repositories.csproj", "{18B5638B-572A-4F61-A3E1-FF6C0F7B552A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogEngine.Data.Repositories", "Data\BlogEngine.Data.Repositories\BlogEngine.Data.Repositories.csproj", "{18B5638B-572A-4F61-A3E1-FF6C0F7B552A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogEngine.Data.Interfaces", "Data\BlogEngine.Data.Interfaces\BlogEngine.Data.Interfaces.csproj", "{AC1081B1-11D2-4A4F-B682-D5B97803F86B}"
 EndProject

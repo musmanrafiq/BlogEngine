@@ -18,8 +18,10 @@ namespace UBlog
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
             services.RegisterServices(Configuration);
+            services.AddMvc();
+
+
 
             //var dummyPosts = DummyDataProvider.GetBlogPosts();
             //services.AddScoped<IBlogPostRepository>(p => new BlogPostRepository(dummyPosts));
@@ -31,7 +33,6 @@ namespace UBlog
             {
                 app.UseDeveloperExceptionPage();
             }
-
 
             app.UseRouting();
             app.UseDefaultFiles();

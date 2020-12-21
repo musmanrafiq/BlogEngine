@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BlogEntine.Data.Repositories.Contexts
+namespace BlogEngine.Data.Repositories.Contexts
 {
     public class BlogEngineDbContext : DbContext, IBlogEngineRepositoryContext, IBlogEngineDbContext
     {

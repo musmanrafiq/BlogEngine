@@ -1,7 +1,7 @@
 ﻿using BlogEngine.Data.Interfaces;
 using System.Threading.Tasks;
 
-namespace BlogEntine.Data.Repositories
+namespace BlogEngine.Data.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {

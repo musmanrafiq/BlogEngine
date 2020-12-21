@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Business\BlogEngine.Business.Interfaces\BlogEngine.Business.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\BlogEngine.Infrastructure.DependencyInjection\BlogEngine.Infrastructure.DependencyInjection.csproj" />
   </ItemGroup>
 
 
