@@ -37,8 +37,8 @@ namespace BlogEngine.Data.Repositories.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Title")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Title")
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime>("UpdateOn")
                         .HasColumnType("TEXT");

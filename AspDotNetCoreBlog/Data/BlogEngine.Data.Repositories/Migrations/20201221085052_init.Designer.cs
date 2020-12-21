@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlogEngine.Data.Repositories.Migrations
 {
     [DbContext(typeof(BlogEngineDbContext))]
-    [Migration("20201221064002_init")]
+    [Migration("20201221085052_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,8 +39,8 @@ namespace BlogEngine.Data.Repositories.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Title")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Title")
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime>("UpdateOn")
                         .HasColumnType("TEXT");

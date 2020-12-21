@@ -1,9 +1,12 @@
-﻿using BlogEngine.Infrastructure.DependencyInjection;
+﻿using BlogEngine.Data.Repositories.Contexts;
+using BlogEngine.Infrastructure.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Linq;
 
 namespace UBlog
 {
@@ -33,6 +36,17 @@ namespace UBlog
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            // todo: we will move this piece to infrastructure 
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<BlogEngineDbContext>();
+                if (context.Database.GetPendingMigrations().Any())
+                {
+                    context.Database.Migrate();
+                }
+            }
+
 
             app.UseRouting();
             app.UseDefaultFiles();

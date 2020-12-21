@@ -18,7 +18,7 @@ namespace BlogEngine.Data.Repositories.Migrations
                     IsActive = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: false),
                     IsDeleted = table.Column<bool>(nullable: false),
-                    Title = table.Column<int>(nullable: false),
+                    Title = table.Column<string>(nullable: true),
                     Content = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
