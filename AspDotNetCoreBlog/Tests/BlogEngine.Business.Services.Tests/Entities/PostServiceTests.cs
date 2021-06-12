@@ -11,14 +11,13 @@ namespace BlogEngine.Business.Services.Tests.Entities
 {
     public class PostServiceTests
     {
+
         [Fact]
         public async System.Threading.Tasks.Task PostServiceTests_GetAll_CanGetAllPostsSuccessfully()
         {
             // Arrange
             int numberOfPosts = 3;
-            Mock<IPostRepository> mockRepo = new Mock<IPostRepository>(MockBehavior.Default);
-            mockRepo.Setup(m => m.GetAsync()).ReturnsAsync(value: GeneratePosts(numberOfPosts));
-            IMapper mapper = AutoMapperHelper.SetupMapper();
+            var (mapper, mockRepo) = SetupDependencies(numberOfPosts);
 
             // Act
             var a = new PostService(mockRepo.Object, mapper);
@@ -29,7 +28,7 @@ namespace BlogEngine.Business.Services.Tests.Entities
 
         }
 
-        #region private
+        #region private methods
 
         private List<Post> GeneratePosts(int noOfPosts)
         {
@@ -40,6 +39,14 @@ namespace BlogEngine.Business.Services.Tests.Entities
                 tempPosts.Add(new Post() { Id = i, Title = $"{i}" });
             }
             return tempPosts;
+        }
+
+        private (IMapper, Mock<IPostRepository>) SetupDependencies(int numberOfPosts)
+        {
+            Mock<IPostRepository> mockRepo = new Mock<IPostRepository>(MockBehavior.Default);
+            mockRepo.Setup(m => m.GetAsync()).ReturnsAsync(value: GeneratePosts(numberOfPosts));
+            IMapper mapper = AutoMapperHelper.SetupMapper();
+            return (mapper, mockRepo);
         }
 
         #endregion
