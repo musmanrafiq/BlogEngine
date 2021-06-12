@@ -10,10 +10,9 @@ namespace BlogEngine.Website.Controllers
         private readonly IPostService _postService;
         private readonly IUnitOfWork _unitOfWork;
 
-        public HomeController(IPostService postService, IUnitOfWork unitOfWork)
+        public HomeController(IPostService postService)
         {
             _postService = postService;
-            _unitOfWork = unitOfWork;
         }
 
         public async Task<IActionResult> Index()

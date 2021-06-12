@@ -1,9 +1,10 @@
-﻿using BlogEngine.Business.Interfaces.entity;
+﻿using BlogEngine.Business.Interfaces.Entities;
 using BlogEngine.Business.Models;
 using BlogEngine.Website.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace BlogEngine.Website.Tests.Controller.Tests
@@ -14,26 +15,26 @@ namespace BlogEngine.Website.Tests.Controller.Tests
 
 
         [Fact]
-        public void Index_ReturnsViewResult_When_Succeeded()
+        public async Task Index_ReturnsViewResult_When_Succeeded()
         {
             //Arrange
             SetupHomeController();
 
             //Act
-            var result = controller.Index();
+            var result = await controller.Index();
 
             //Assert
             Assert.IsType<ViewResult>(result);
         }
 
         [Fact]
-        public void Index_ReturnsPosts_When_Succeeded()
+        public async Task Index_ReturnsPosts_When_Succeeded()
         {
             // Arrange
             SetupHomeController();
 
             // Act
-            var result = controller.Index();
+            var result = await controller.Index();
 
             // Assert
             var viewResult = Assert.IsType<ViewResult>(result);
@@ -47,11 +48,11 @@ namespace BlogEngine.Website.Tests.Controller.Tests
         {
             var mockPostService = new Mock<IPostService>();
             mockPostService.Setup(s => s.GetAll()).Returns(GetList());
-            //controller = new HomeController(mockPostService.Object);
+            controller = new HomeController(mockPostService.Object);
         }
 
         // test posts list
-        private List<PostModel> GetList()
+        private async Task<List<PostModel>> GetList()
         {
             var postModels = new List<PostModel> { new PostModel { }, new PostModel { } };
             return postModels;
