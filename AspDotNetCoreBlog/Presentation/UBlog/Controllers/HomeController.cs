@@ -1,4 +1,5 @@
-﻿using BlogEngine.Data.Interfaces;
+﻿using BlogEngine.Business.Interfaces.Entities;
+using BlogEngine.Data.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -6,23 +7,19 @@ namespace BlogEngine.Website.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IPostRepository _postRepository;
+        private readonly IPostService _postService;
         private readonly IUnitOfWork _unitOfWork;
 
-        public HomeController(IPostRepository postRepository, IUnitOfWork unitOfWork)
+        public HomeController(IPostService postService, IUnitOfWork unitOfWork)
         {
-            _postRepository = postRepository;
+            _postService = postService;
             _unitOfWork = unitOfWork;
         }
 
-        // GET: /<controller>/
         public async Task<IActionResult> Index()
         {
-            _postRepository.Add(new Data.Model.Entities.Post { Title = "Test title" });
-            await _unitOfWork.SaveChangesAsync();
-
-            var allPosts = await _postRepository.GetAsync();
-            return View();
+            var allPosts = await _postService.GetAll();
+            return View(allPosts);
         }
     }
 }

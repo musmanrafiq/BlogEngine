@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BlogEngine.Infrastructure.DependencyInjection
+namespace BlogEngine.Infrastructure.DependencyInjection.Modules
 {
     public class RepositoryModule
     {

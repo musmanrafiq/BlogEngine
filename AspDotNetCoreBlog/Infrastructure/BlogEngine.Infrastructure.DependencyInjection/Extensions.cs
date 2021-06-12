@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using BlogEngine.Infrastructure.DependencyInjection.Modules;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BlogEngine.Infrastructure.DependencyInjection
@@ -8,6 +9,7 @@ namespace BlogEngine.Infrastructure.DependencyInjection
         public static void RegisterServices(this IServiceCollection service, IConfiguration configuration)
         {
             RepositoryModule.Configure(service, configuration);
+            ServiceModule.Configure(service);
         }
     }
 }
