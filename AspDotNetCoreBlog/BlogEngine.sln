@@ -19,15 +19,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Business.Interfa
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{386AEA7B-1B1B-46A2-B286-384941AC8C59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogEngine.Data.Model", "Data\BlogEngine.Data.Model\BlogEngine.Data.Model.csproj", "{74764570-932D-4C08-AF83-C0E8F7E6F19D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Data.Model", "Data\BlogEngine.Data.Model\BlogEngine.Data.Model.csproj", "{74764570-932D-4C08-AF83-C0E8F7E6F19D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogEngine.Data.Repositories", "Data\BlogEngine.Data.Repositories\BlogEngine.Data.Repositories.csproj", "{18B5638B-572A-4F61-A3E1-FF6C0F7B552A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Data.Repositories", "Data\BlogEngine.Data.Repositories\BlogEngine.Data.Repositories.csproj", "{18B5638B-572A-4F61-A3E1-FF6C0F7B552A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogEngine.Data.Interfaces", "Data\BlogEngine.Data.Interfaces\BlogEngine.Data.Interfaces.csproj", "{AC1081B1-11D2-4A4F-B682-D5B97803F86B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Data.Interfaces", "Data\BlogEngine.Data.Interfaces\BlogEngine.Data.Interfaces.csproj", "{AC1081B1-11D2-4A4F-B682-D5B97803F86B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{33865ABF-3108-4569-BD74-FB60C9778447}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogEngine.Infrastructure.DependencyInjection", "Infrastructure\BlogEngine.Infrastructure.DependencyInjection\BlogEngine.Infrastructure.DependencyInjection.csproj", "{CCBF78E2-46C5-4265-9268-31FF29E28A6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Infrastructure.DependencyInjection", "Infrastructure\BlogEngine.Infrastructure.DependencyInjection\BlogEngine.Infrastructure.DependencyInjection.csproj", "{CCBF78E2-46C5-4265-9268-31FF29E28A6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogEngine.Business.Services", "Business\BlogEngine.Business.Services\BlogEngine.Business.Services.csproj", "{CEECF2FE-7424-471F-A68F-E0B5586DABF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +69,10 @@ Global
 		{CCBF78E2-46C5-4265-9268-31FF29E28A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCBF78E2-46C5-4265-9268-31FF29E28A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCBF78E2-46C5-4265-9268-31FF29E28A6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEECF2FE-7424-471F-A68F-E0B5586DABF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEECF2FE-7424-471F-A68F-E0B5586DABF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEECF2FE-7424-471F-A68F-E0B5586DABF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEECF2FE-7424-471F-A68F-E0B5586DABF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +86,7 @@ Global
 		{18B5638B-572A-4F61-A3E1-FF6C0F7B552A} = {386AEA7B-1B1B-46A2-B286-384941AC8C59}
 		{AC1081B1-11D2-4A4F-B682-D5B97803F86B} = {386AEA7B-1B1B-46A2-B286-384941AC8C59}
 		{CCBF78E2-46C5-4265-9268-31FF29E28A6A} = {33865ABF-3108-4569-BD74-FB60C9778447}
+		{CEECF2FE-7424-471F-A68F-E0B5586DABF7} = {D8C25926-9BF6-4914-AF23-0B51859CA75B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {09C9F4B9-FB6D-42B0-A5CA-D87588D1FEDB}
