@@ -3,6 +3,7 @@ using BlogEngine.Business.Services.Entities;
 using BlogEngine.Data.Interfaces;
 using BlogEngine.Data.Model.Entities;
 using BlogEngine.Tests.Helpers;
+using FluentAssertions;
 using Moq;
 using System.Collections.Generic;
 using Xunit;
@@ -24,8 +25,7 @@ namespace BlogEngine.Business.Services.Tests.Entities
             var allPosts = await a.GetAll();
 
             // Assert
-            Assert.Equal(3, allPosts.Count);
-
+            allPosts.Count.Should().Be(numberOfPosts);
         }
 
         #region private methods
