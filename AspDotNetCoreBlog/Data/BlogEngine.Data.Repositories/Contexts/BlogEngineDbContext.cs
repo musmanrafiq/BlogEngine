@@ -14,6 +14,7 @@ namespace BlogEngine.Data.Repositories.Contexts
         }
 
         public DbSet<Post> Posts { get; set; }
+        public DbSet<Prompt> Prompts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

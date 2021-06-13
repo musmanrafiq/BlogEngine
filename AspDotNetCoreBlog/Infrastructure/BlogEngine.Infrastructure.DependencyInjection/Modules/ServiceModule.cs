@@ -16,6 +16,7 @@ namespace BlogEngine.Infrastructure.DependencyInjection.Modules
 
             // registration
             services.AddScoped<IPostService, PostService>();
+            services.AddScoped<IPromptService, PromptService>();
             services.AddSingleton(mapper);
         }
     }
