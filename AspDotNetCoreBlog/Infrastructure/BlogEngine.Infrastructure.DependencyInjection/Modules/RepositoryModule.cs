@@ -21,6 +21,7 @@ namespace BlogEngine.Infrastructure.DependencyInjection.Modules
             services.AddScoped<IUnitOfWork>(unit => new UnitOfWork(unit.GetService<IBlogEngineRepositoryContext>()));
 
             services.AddScoped<IPostRepository, PostRepository>();
+            services.AddScoped<IPromptRepository, PromptRepository>();
 
         }
     }

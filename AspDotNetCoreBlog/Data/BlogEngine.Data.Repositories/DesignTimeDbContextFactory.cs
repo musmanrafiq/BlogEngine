@@ -9,7 +9,7 @@ namespace BlogEngine.Data.Repositories
         public BlogEngineDbContext CreateDbContext(string[] args)
         {
             var builder = new DbContextOptionsBuilder<BlogEngineDbContext>();
-            builder.UseSqlite("Filename=D:\\dbs\\ublog.db");
+            builder.UseSqlite("Filename=E:\\dbs\\ublog.db");
             return new BlogEngineDbContext(builder.Options);
         }
     }

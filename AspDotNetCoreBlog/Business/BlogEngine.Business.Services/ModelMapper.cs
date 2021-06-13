@@ -16,7 +16,9 @@ namespace BlogEngine.Business.Services
             return new MapperConfiguration(cfg =>
             {
 
+                cfg.CreateMap<Models.BaseEntityModel, Data.Model.Entities.BaseEntity>().ReverseMap();
                 cfg.CreateMap<Models.PostModel, Data.Model.Entities.Post>().ReverseMap();
+                cfg.CreateMap<Models.PromptModel, Data.Model.Entities.Prompt>().ReverseMap();
 
                 /*cfg.CreateMap<Models.UserInterests, Data.Models.UserInterests>().AfterMap((source, destination) =>
                 {

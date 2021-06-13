@@ -3,14 +3,16 @@ using System;
 using BlogEngine.Data.Repositories.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BlogEngine.Data.Repositories.Migrations
 {
     [DbContext(typeof(BlogEngineDbContext))]
-    partial class BlogEngineDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210613154341_prompt_entity_add")]
+    partial class prompt_entity_add
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
