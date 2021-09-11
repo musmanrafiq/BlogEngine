@@ -11,7 +11,7 @@ namespace BlogEngine.Business.Services.Entities
     public class PostService : IPostService
     {
         private readonly IPostRepository _postRepository;
-        private IMapper _mapper;
+        private readonly IMapper _mapper;
 
         public PostService(IPostRepository postRepository, IMapper mapper)
         {

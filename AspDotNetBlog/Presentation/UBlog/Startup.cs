@@ -23,11 +23,6 @@ namespace UBlog
         {
             services.RegisterServices(Configuration);
             services.AddMvc();
-
-
-
-            //var dummyPosts = DummyDataProvider.GetBlogPosts();
-            //services.AddScoped<IBlogPostRepository>(p => new BlogPostRepository(dummyPosts));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -59,7 +54,7 @@ namespace UBlog
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-
+                // handles admin controllers ( Areas/Admin )
                 endpoints.MapAreaControllerRoute(
                      name: "areas",
                      areaName: "admin",
