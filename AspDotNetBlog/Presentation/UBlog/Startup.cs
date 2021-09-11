@@ -58,6 +58,14 @@ namespace UBlog
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
+                endpoints.MapAreaControllerRoute(
+                     name: "areas",
+                     areaName: "admin",
+                     pattern: "Admin/{controller=Home}/{action=Index}/{id?}"
+                   );
+
             });
 
             app.UseEndpoints(endpoints =>
