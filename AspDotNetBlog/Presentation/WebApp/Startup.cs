@@ -62,11 +62,6 @@ namespace UBlog
                    );
 
             });
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
         }
     }
 }

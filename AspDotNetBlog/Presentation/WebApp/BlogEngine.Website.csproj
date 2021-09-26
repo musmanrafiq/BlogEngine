@@ -16,9 +16,10 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Content\js\" />
-    <Folder Include="Content\lib\" />
-    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\*" />
   </ItemGroup>
 
   <ItemGroup>
