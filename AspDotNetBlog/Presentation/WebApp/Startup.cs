@@ -21,6 +21,7 @@ namespace UBlog
 
         public void ConfigureServices(IServiceCollection services)
         {
+            // registration of all solution dependencies
             services.RegisterServices(Configuration);
             services.AddMvc();
         }

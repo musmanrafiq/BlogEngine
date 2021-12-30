@@ -31,7 +31,7 @@ namespace BlogEngine.Business.Services
 
             });
         }
-        public static TDestination Map<TDestination>(object source) where TDestination : class
+        /*public static TDestination Map<TDestination>(object source) where TDestination : class
         {
             return Mapper.Map<TDestination>(source);
         }
@@ -82,6 +82,6 @@ namespace BlogEngine.Business.Services
         public static object Map(object source, object destination, Type sourceType, Type destinationType, Action<IMappingOperationOptions> opts)
         {
             return Mapper.Map(source, destination, sourceType, destinationType, opts);
-        }
+        }*/
     }
 }

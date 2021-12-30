@@ -14,7 +14,7 @@ namespace UBlog
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseWebRoot("Content").UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>();
                 });
     }
 }

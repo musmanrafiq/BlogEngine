@@ -21,7 +21,7 @@ namespace BlogEngine.Business.Services.Entities
 
         public async Task<List<PostModel>> GetAll()
         {
-            var entities = await _postRepository.GetAsync().ConfigureAwait(false);
+            var entities = await _postRepository.GetAsync();
             return _mapper.Map<List<Post>, List<PostModel>>(entities);
         }
     }

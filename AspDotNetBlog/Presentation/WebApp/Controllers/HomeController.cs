@@ -7,17 +7,15 @@ namespace BlogEngine.Website.Controllers
     public class HomeController : Controller
     {
         private readonly IPostService _postService;
-        private readonly IPromptService _promptService;
 
-        public HomeController(IPostService postService, IPromptService promptService)
+        public HomeController(IPostService postService)
         {
             _postService = postService;
-            _promptService = promptService;
         }
 
         public async Task<IActionResult> Index()
         {
-            var prompts = await _promptService.GetAll();
+            // fetched all posts from database
             var allPosts = await _postService.GetAll();
             return View(allPosts);
         }
