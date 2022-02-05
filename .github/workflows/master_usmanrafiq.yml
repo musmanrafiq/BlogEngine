@@ -23,10 +23,10 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build --configuration Release --source D:/a/BlogEngine/BlogEngine/AspDotNetBlog/Presentation/WebApp
+        run: dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp --source ${{env.DOTNET_ROOT}}/AspDotNetBlog/Presentation/WebApp
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp --source D:/a/BlogEngine/BlogEngine/AspDotNetBlog/Presentation/WebApp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
