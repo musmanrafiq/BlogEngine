@@ -7,33 +7,33 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DD129D49-90BD-4CAD-9F92-E3048B541E68}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Website.Tests", "Tests\BlogEngine.Website.Tests\BlogEngine.Website.Tests.csproj", "{88BAA576-FFE5-48EE-9EA9-7ABD39B973E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Website.Tests", "AspDotNetBlog\Tests\BlogEngine.Website.Tests\BlogEngine.Website.Tests.csproj", "{88BAA576-FFE5-48EE-9EA9-7ABD39B973E7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{D8C25926-9BF6-4914-AF23-0B51859CA75B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Business.Models", "Business\BlogEngine.Business.Models\BlogEngine.Business.Models.csproj", "{16015B1A-B880-420E-9721-7811C769B942}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Business.Models", "AspDotNetBlog\Business\BlogEngine.Business.Models\BlogEngine.Business.Models.csproj", "{16015B1A-B880-420E-9721-7811C769B942}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Business.Interfaces", "Business\BlogEngine.Business.Interfaces\BlogEngine.Business.Interfaces.csproj", "{0B3F58A8-EE56-486B-80B6-21F1BE520524}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Business.Interfaces", "AspDotNetBlog\Business\BlogEngine.Business.Interfaces\BlogEngine.Business.Interfaces.csproj", "{0B3F58A8-EE56-486B-80B6-21F1BE520524}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{386AEA7B-1B1B-46A2-B286-384941AC8C59}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Data.Model", "Data\BlogEngine.Data.Model\BlogEngine.Data.Model.csproj", "{74764570-932D-4C08-AF83-C0E8F7E6F19D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Data.Model", "AspDotNetBlog\Data\BlogEngine.Data.Model\BlogEngine.Data.Model.csproj", "{74764570-932D-4C08-AF83-C0E8F7E6F19D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Data.Repositories", "Data\BlogEngine.Data.Repositories\BlogEngine.Data.Repositories.csproj", "{18B5638B-572A-4F61-A3E1-FF6C0F7B552A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Data.Repositories", "AspDotNetBlog\Data\BlogEngine.Data.Repositories\BlogEngine.Data.Repositories.csproj", "{18B5638B-572A-4F61-A3E1-FF6C0F7B552A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Data.Interfaces", "Data\BlogEngine.Data.Interfaces\BlogEngine.Data.Interfaces.csproj", "{AC1081B1-11D2-4A4F-B682-D5B97803F86B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Data.Interfaces", "AspDotNetBlog\Data\BlogEngine.Data.Interfaces\BlogEngine.Data.Interfaces.csproj", "{AC1081B1-11D2-4A4F-B682-D5B97803F86B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{33865ABF-3108-4569-BD74-FB60C9778447}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Infrastructure.DependencyInjection", "Infrastructure\BlogEngine.Infrastructure.DependencyInjection\BlogEngine.Infrastructure.DependencyInjection.csproj", "{CCBF78E2-46C5-4265-9268-31FF29E28A6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Infrastructure.DependencyInjection", "AspDotNetBlog\Infrastructure\BlogEngine.Infrastructure.DependencyInjection\BlogEngine.Infrastructure.DependencyInjection.csproj", "{CCBF78E2-46C5-4265-9268-31FF29E28A6A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Business.Services", "Business\BlogEngine.Business.Services\BlogEngine.Business.Services.csproj", "{CEECF2FE-7424-471F-A68F-E0B5586DABF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Business.Services", "AspDotNetBlog\Business\BlogEngine.Business.Services\BlogEngine.Business.Services.csproj", "{CEECF2FE-7424-471F-A68F-E0B5586DABF7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Business.Services.Tests", "Tests\BlogEngine.Business.Services.Tests\BlogEngine.Business.Services.Tests.csproj", "{B9EF713C-211E-4970-BD7E-B206A2F9E116}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Business.Services.Tests", "AspDotNetBlog\Tests\BlogEngine.Business.Services.Tests\BlogEngine.Business.Services.Tests.csproj", "{B9EF713C-211E-4970-BD7E-B206A2F9E116}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Tests.Helpers", "Tests\BlogEngine.Tests.Helpers\BlogEngine.Tests.Helpers.csproj", "{9EC449C1-65A5-466E-9A90-3491ACB8B009}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Tests.Helpers", "AspDotNetBlog\Tests\BlogEngine.Tests.Helpers\BlogEngine.Tests.Helpers.csproj", "{9EC449C1-65A5-466E-9A90-3491ACB8B009}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Website", "Presentation\WebApp\BlogEngine.Website.csproj", "{71B3276E-3BED-4F83-A076-ADF89F45B919}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Website", "AspDotNetBlog\Presentation\WebApp\BlogEngine.Website.csproj", "{71B3276E-3BED-4F83-A076-ADF89F45B919}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
