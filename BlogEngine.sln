@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29319.158
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{F9B39FCB-00DD-46BA-AD4E-C45DEEA6F60E}"
 EndProject
@@ -34,6 +34,11 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Tests.Helpers", "AspDotNetBlog\Tests\BlogEngine.Tests.Helpers\BlogEngine.Tests.Helpers.csproj", "{9EC449C1-65A5-466E-9A90-3491ACB8B009}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogEngine.Website", "AspDotNetBlog\Presentation\WebApp\BlogEngine.Website.csproj", "{71B3276E-3BED-4F83-A076-ADF89F45B919}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".RequirementDocs", ".RequirementDocs", "{BFFE8214-C5BD-4CED-A3FB-49E545F4D6D9}"
+	ProjectSection(SolutionItems) = preProject
+		AddPost.md = AddPost.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

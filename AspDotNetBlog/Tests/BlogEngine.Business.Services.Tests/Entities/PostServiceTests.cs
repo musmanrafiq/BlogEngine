@@ -12,6 +12,11 @@ namespace BlogEngine.Business.Services.Tests.Entities
 {
     public class PostServiceTests
     {
+        private readonly Mock<IUnitOfWork> _unitOfWork;
+        public PostServiceTests()
+        {
+            _unitOfWork = new Mock<IUnitOfWork>();
+        }
 
         [Fact]
         public async System.Threading.Tasks.Task PostServiceTests_GetAll_CanGetAllPostsSuccessfully()
@@ -21,7 +26,7 @@ namespace BlogEngine.Business.Services.Tests.Entities
             var (mapper, mockRepo) = SetupDependencies(numberOfPosts);
 
             // Act
-            var a = new PostService(mockRepo.Object, mapper);
+            var a = new PostService(mockRepo.Object, mapper, _unitOfWork.Object);
             var allPosts = await a.GetAll();
 
             // Assert
