@@ -1,29 +1,24 @@
 ﻿using AutoMapper;
-using BlogEngine.Business.Interfaces.Entities;
 using BlogEngine.Business.Models;
 using BlogEngine.Business.Services.Entities;
 using BlogEngine.Data.Interfaces;
 using BlogEngine.Data.Model.Entities;
 using Moq;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace BlogEngine.Website.Tests.Admin.Controller.Tests
+namespace BlogEngine.Business.Services.Tests.Posts
 {
-    
-    public class PostInsert
+    public class InsertPostServiceTests
     {
         private readonly Mock<IMapper> _mapper;
         private readonly Mock<IPostRepository> _postRepository;
         private readonly PostService _postService;
         private readonly Mock<IUnitOfWork> _unitOfWork;
 
-        public PostInsert()
+        public InsertPostServiceTests()
         {
             _mapper = new Mock<IMapper>();
             _postRepository = new Mock<IPostRepository>();
@@ -33,17 +28,18 @@ namespace BlogEngine.Website.Tests.Admin.Controller.Tests
         }
 
         [Fact]
-        public async Task ShouldReturnPostWithRequiredResponseValue()
+        public async Task PostServiceTests_CreatePostAsync_ShouldCreatePostSuccessfully()
         {
             //Arrange
-            var postRequest = new PostModel {
+            var postRequest = new PostModel
+            {
                 Title = "Test Post",
-                Content = "Test Post Content"                
+                Content = "Test Post Content"
             };
             //Act
             var result = await _postService.CreatePostAsync(postRequest);
 
-            _postRepository.Verify(x=> x.Add(It.IsAny<Post>()), Times.Once);
+            _postRepository.Verify(x => x.Add(It.IsAny<Post>()), Times.Once);
             _unitOfWork.Verify(x => x.SaveChangesAsync(), Times.Once);
 
 
@@ -53,27 +49,27 @@ namespace BlogEngine.Website.Tests.Admin.Controller.Tests
         }
 
         [Fact]
-        public async Task ShouldNotAddResponseValue()
+        public async Task PostServiceTests_CreatePostAsync_ShouldNotCreatePostWithDuplicateTitle()
         {
             //Arrange
             var postRequest = new PostModel
             {
                 Title = "Test Post",
                 Content = "Test Post Content"
-            };            
-            _postRepository.Setup(x => x.Get(It.IsAny<Expression<Func<Post, bool>>>())).ReturnsAsync(new Post { Title = postRequest.Title});
-            
+            };
+            _postRepository.Setup(x => x.Get(It.IsAny<Expression<Func<Post, bool>>>())).ReturnsAsync(new Post { Title = postRequest.Title });
+
             //Act
-            _postRepository.Verify(x=>x.Add(It.IsAny<Post>()), Times.Never);
-            _unitOfWork.Verify(x => x.SaveChangesAsync(), Times.Never);            
-            
+            _postRepository.Verify(x => x.Add(It.IsAny<Post>()), Times.Never);
+            _unitOfWork.Verify(x => x.SaveChangesAsync(), Times.Never);
+
             var exception = await Assert.ThrowsAsync<Exception>(() => _postService.CreatePostAsync(postRequest));
             Assert.Equal("Post already exists", exception.Message);
 
         }
 
         [Fact]
-        public async Task ShouldThrowNullExceptionIfPostModelIsNull()
+        public async Task PostServiceTests_CreatePostAsync_ShouldThrowNullExceptionIfPostModelIsNull()
         {
             //Arrange
             PostModel postRequest = null;
@@ -84,4 +80,5 @@ namespace BlogEngine.Website.Tests.Admin.Controller.Tests
             var exception = await Assert.ThrowsAsync<ArgumentNullException>(() => _postService.CreatePostAsync(postRequest));
         }
     }
+
 }
