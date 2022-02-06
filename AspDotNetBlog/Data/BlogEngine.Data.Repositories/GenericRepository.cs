@@ -1,6 +1,9 @@
 ﻿using BlogEngine.Data.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace BlogEngine.Data.Repositories
@@ -35,6 +38,43 @@ namespace BlogEngine.Data.Repositories
         {
             var entry = dbSet.Add(entity).Entity;
             return entry;
+        }
+
+        public virtual TEntity FindById(TKey key)
+        {
+            var entry = dbSet.Find(key);
+            return entry;
+        }
+
+        public virtual IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null,Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+       string includeProperties = "")
+        {
+            IQueryable<TEntity> Query = DbSet;
+
+            if (filter != null)
+            {
+                Query = Query.Where(filter);
+            }
+
+            if (!string.IsNullOrEmpty(includeProperties))
+            {
+                foreach (string IncludeProperty in includeProperties.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    Query = Query.Include(IncludeProperty);
+                }
+            }
+
+            if (orderBy != null)
+            {
+                return orderBy(Query);
+            }
+            return Query;
+        }
+
+        public virtual Task<TEntity> Get(Expression<Func<TEntity, bool>> filter)
+        {
+            IQueryable<TEntity> Query = DbSet;
+            return Query.Where(filter).SingleOrDefaultAsync();
         }
     }
 }

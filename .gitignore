@@ -328,3 +328,6 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+AspDotNetBlog/Presentation/WebApp/ublog.db
+AspDotNetBlog/Presentation/WebApp/ublog.db-shm
+AspDotNetBlog/Presentation/WebApp/ublog.db-wal
