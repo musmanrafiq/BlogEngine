@@ -76,5 +76,11 @@ namespace BlogEngine.Data.Repositories
             IQueryable<TEntity> Query = DbSet;
             return Query.Where(filter).SingleOrDefaultAsync();
         }
+
+        public virtual Task<List<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> filter)
+        {
+            IQueryable<TEntity> Query = DbSet;
+            return Query.Where(filter).ToListAsync();
+        }
     }
 }

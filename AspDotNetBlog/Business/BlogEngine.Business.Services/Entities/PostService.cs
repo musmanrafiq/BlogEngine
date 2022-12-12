@@ -42,5 +42,16 @@ namespace BlogEngine.Business.Services.Entities
             _ = await _unitOfWork.SaveChangesAsync();
             return postRequest;
         }
+
+        public async Task<List<PostModel>> Get(string searchQuery)
+        {
+            var entities = await _postRepository.GetListAsync(x => x.Title.Contains(searchQuery));
+            return _mapper.Map<List<Post>, List<PostModel>>(entities);
+        }
+
+        Task<List<PostModel>> IPostService.CreatePostAsync(PostModel postRequest)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
