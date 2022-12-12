@@ -19,5 +19,12 @@ namespace BlogEngine.Website.Controllers
             var allPosts = await _postService.GetAll();
             return View(allPosts);
         }
+
+        public async Task<IActionResult> Search(string query)
+        {
+            // fetched all posts from database
+            var allPosts = await _postService.Get(query);
+            return View( nameof(Index), allPosts);
+        }
     }
 }

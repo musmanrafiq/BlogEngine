@@ -10,5 +10,6 @@ namespace BlogEngine.Data.Interfaces
         Task<List<TEntity>> GetAsync();
         TEntity Add(TEntity entity);
         Task<TEntity> Get(Expression<Func<TEntity, bool>> filter);
+        Task<List<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> filter);
     }
 }

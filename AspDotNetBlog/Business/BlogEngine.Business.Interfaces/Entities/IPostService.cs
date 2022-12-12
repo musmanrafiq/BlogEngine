@@ -7,6 +7,7 @@ namespace BlogEngine.Business.Interfaces.Entities
     public interface IPostService
     {
         public Task<List<PostModel>> GetAll();
-        Task<PostModel> CreatePostAsync(PostModel postRequest);
+        public Task<List<PostModel>> Get(string searchQuery);
+        public Task<List<PostModel>> CreatePostAsync(PostModel postRequest);
     }
 }
